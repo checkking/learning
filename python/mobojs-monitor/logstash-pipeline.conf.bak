@@ -1,0 +1,17 @@
+input {
+    beats {
+        port => "5043"
+    }
+}
+filter {
+    grok {
+        patterns_dir => [ "/home/work/chenkang/mobojs-monitor/logstash_patterns" ]
+        match => { "message" => "%{NGINXACCESS}" }
+    }
+}
+output {
+    tcp {
+        host => "localhost"
+        port => "9999"
+    } 
+}
