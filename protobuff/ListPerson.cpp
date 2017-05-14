@@ -10,9 +10,7 @@ void ListPeople(const tutorial::AddressBook& address_book) {
         const tutorial::Person& person = address_book.person(i);
         cout << "Person ID: " << person.id() << endl;
         cout << "  Name: " << person.name() << endl;
-        if (person.has_email()) {
-            cout << "  E-mail address: " << person.email() << endl;
-        }
+        cout << "  E-mail address: " << person.email() << endl;
         for (int j = 0; j < person.phone_size(); j++) {
             const tutorial::Person::PhoneNumber& phone_number = person.phone(j);
             switch (phone_number.type()) {

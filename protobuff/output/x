@@ -1,0 +1,9 @@
+t@instance-8alx1qc6-1:~/github/learning/protobuff/output# ./writer book
+book: File not found.  Creating a new file.
+Enter person ID number: 123
+Enter name: ck
+Enter email address (blank for none): ck@f.com
+Enter a phone number (or leave blank to finish): 11
+Is this a mobile, home, or work phone? 
+Unknown phone type.  Using default.
+Enter a phone number (or leave blank to finish): 

@@ -8,13 +8,13 @@ pre:
 	mkdir $(OUTPUT)
 
 protoc_addressbook:
-	protoc --cpp_out=./cout -I=./proto/ ./proto/addressbook.proto
+	/usr/local/bin/protoc --cpp_out=./cout -I=./proto/ ./proto/addressbook.proto
 
 writer:
-	g++ -g -o ./$(OUTPUT)/writer AddPerson.cpp ./cout/addressbook.pb.cc -I./cout  -lprotobuf -pthread
+	g++ -g -o ./$(OUTPUT)/writer AddPerson.cpp ./cout/addressbook.pb.cc -I./cout -L/usr/local/lib  -lprotobuf -pthread
 
 reader:
-	g++ -g -o ./$(OUTPUT)/reader ListPerson.cpp ./cout/addressbook.pb.cc -I./cout  -lprotobuf -pthread
+	g++ -g -o ./$(OUTPUT)/reader ListPerson.cpp ./cout/addressbook.pb.cc -I./cout -L/usr/local/lib  -lprotobuf -pthread
 
 clean:
 	rm -rf $(OUTPUT) ./cout/*
